@@ -1,0 +1,15 @@
+fh=open("mbox-short.txt","r")
+ul=[]
+c=0
+for line in fh:
+    
+    if line.startswith("From"):
+        line=line.strip()
+        line=line.split()
+        ul.append(line)
+for i in range(0,len(ul)):
+    if i%2==0:
+        c+=1
+        print(ul[i][1])
+print("There were {} lines in the file with From as the first word".format(c))
+        
